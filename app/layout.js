@@ -33,16 +33,55 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* Google Conversion Event Snippet */}
+        {/* Purchase Conversion Event Snippet */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              function trackPurchaseEvent(transactionId) {
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
                 gtag('event', 'conversion', {
                   'send_to': 'AW-10888307324/ul49CNav648YEPzE-cco',
-                  'transaction_id': transactionId
+                  'transaction_id': '',
+                  'event_callback': callback
                 });
+                return false;
               }
+            `,
+          }}
+        />
+
+        {/* Google Shopping App Purchase Conversion Event Snippet */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-10888307324/vEMyCITyw5EYEPzE-cco',
+                  'value': 0.0,
+                  'currency': 'INR',
+                  'transaction_id': '',
+                  'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
+
+        {/* Leads Conversion Event Snippet */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('event', 'conversion', {'send_to': 'AW-10888307324/rtPdCIum6csYEPzE-cco'});
             `,
           }}
         />
