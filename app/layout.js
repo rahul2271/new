@@ -32,6 +32,20 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+
+        {/* Google Conversion Event Snippet */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function trackPurchaseEvent(transactionId) {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-10888307324/ul49CNav648YEPzE-cco',
+                  'transaction_id': transactionId
+                });
+              }
+            `,
+          }}
+        />
         </head>
       <body className={poppins.className}>
       <Header/>
