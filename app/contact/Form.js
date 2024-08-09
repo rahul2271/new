@@ -295,6 +295,10 @@ const Form = () => {
       <option value="Respiratory Disorders">Respiratory Disorders</option>
       <option value="Male & Female Infertility">Male & Female Infertility</option>
       <option value="Brain">Brain Disorders</option>
+      <option value="Brain">ITP</option>
+      <option value="Brain">Male Infertility</option>
+      <option value="Brain">Female Infertility</option>
+
       <option value="other">other  </option>
 
     </select>
